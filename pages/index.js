@@ -18,9 +18,8 @@ export function playToday(status) {
 }
 
 export function teamLogo(props, team) {
-    var imagePath = "https://liquipedia.net/" + props.data.images[team]
     return <Image
-        src={imagePath}
+        src={"https://liquipedia.net/" + props.data.images[team]}
         height={30}
         width={30}
         alt={props.data.teams[team] + " Logo"}
@@ -50,24 +49,40 @@ export default function Home(props) {
                         letter-spacing: 6px;
                     }
             `}</style>
-            <center>
-                <Image 
-                    src="https://liquipedia.net/commons/images/thumb/d/dd/Sharks_Esports.png/600px-Sharks_Esports.png"
-                    height={200}
-                    width={200}
-                    alt={"Sharks Logo"}
-                />
-            </center>
-            <header className="w3-panel w3-center w3-opacity">
-                <h1>A Sharks joga hoje?</h1>
-                {playToday(props.data.play_today)}
-                <h2>{teamLogo(props, 0)} <a href={"https://liquipedia.net" + props.data.links[0]} target="_blank">{props.data.teams[0]}</a> vs <a href={"https://liquipedia.net" + props.data.links[1]} target="_blank">{props.data.teams[1]}</a> {teamLogo(props, 1)}</h2>
-                Próximo jogo: <u>{props.data.date[0]}</u> aproximadamente às <u>{getMatchTime(props.data.time[0])}</u><br></br>
-                Informações obtidas no <a href="https://liquipedia.net">Liquipedia</a>
-                <p>by Rodrigo "Inkky" Câmara</p>
-                <a className="github-button" href="https://github.com/roarena/sharks-joga-valorant-hoje" data-size="large" data-show-count="true" aria-label="roarena/sharks-joga-valorant-hoje on GitHub">GitHub</a>
-                <p><a href="https://twitter.com/_rodrigocamara?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @_rodrigocamara</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></p>
-            </header>
+            <body>
+                <center>
+                    <Image
+                        src="https://liquipedia.net/commons/images/thumb/d/dd/Sharks_Esports.png/600px-Sharks_Esports.png"
+                        height={200}
+                        width={200}
+                        alt={"Sharks Logo"}
+                    />
+                </center>
+
+                <header className="w3-panel w3-center w3-opacity">
+                    <h1>A Sharks joga hoje?</h1>
+                    {playToday(props.data.play_today)}
+                    <h2>
+                        {teamLogo(props, 0)}
+                        <a href={"https://liquipedia.net" + props.data.links[0]} target="_blank">{props.data.teams[0]}</a> vs <a href={"https://liquipedia.net" + props.data.links[1]} target="_blank">{props.data.teams[1]}</a>
+                        {teamLogo(props, 1)}
+                    </h2>
+                    <p>Próximo jogo: <u>{props.data.date[0]}</u> aproximadamente às <u>{getMatchTime(props.data.time[0])}</u></p>
+                    <p>Informações obtidas no <a href="https://liquipedia.net">Liquipedia</a></p>
+                    <p>by Rodrigo "Inkky" Câmara</p>
+                    <a className="github-button"
+                        href="https://github.com/roarena/sharks-joga-valorant-hoje"
+                        data-size="large"
+                        data-show-count="true"
+                        aria-label="roarena/sharks-joga-valorant-hoje on GitHub">
+                        GitHub
+                </a>
+                    <p><a href="https://twitter.com/_rodrigocamara?ref_src=twsrc%5Etfw"
+                        className="twitter-follow-button"
+                        data-show-count="false">@_rodrigocamara</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></p>
+                </header>
+            </body>
         </div>
     )
 }
