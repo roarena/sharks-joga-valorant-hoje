@@ -35,9 +35,10 @@ export default function Home(props) {
     return (
         <div className="w3-content">
             <Head>
-                <title>Sharks joga Valorant hoje?</title>
+                <title>A Sharks joga Valorant hoje?</title>
                 <link rel="icon" href="/favicon.ico" />
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
+                <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
             </Head>
@@ -48,7 +49,9 @@ export default function Home(props) {
                     h1 {
                         letter-spacing: 6px;
                     }
-            `}</style>
+            `}
+            </style>
+
             <body>
                 <center>
                     <Image
@@ -80,7 +83,7 @@ export default function Home(props) {
                     <p><a href="https://twitter.com/_rodrigocamara?ref_src=twsrc%5Etfw"
                         className="twitter-follow-button"
                         data-show-count="false">@_rodrigocamara</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></p>
+                        </p>
                 </header>
             </body>
         </div>
