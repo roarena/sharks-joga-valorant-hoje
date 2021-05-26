@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 export async function getServerSideProps() {
-    const res = await fetch('https://brasil-joga-valorant-hoje.vercel.app/api/index?team=vks')
+    const res = await fetch('https://brasil-joga-valorant-hoje.vercel.app/api/index?team=sharks')
     const data = await res.json()
     return {
         props: {
